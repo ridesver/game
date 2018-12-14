@@ -17,26 +17,21 @@ public class PlayerController : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-
+		//получение анимации игрока
         anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
 
         if(!playerExists)
         {
+		//удаление дупликата спрайта игрока
             playerExists = true;
             DontDestroyOnLoad(transform.gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
-		
+        }else {Destroy(gameObject); }	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		//соответствие анимации и движения игрока в различные стороны
         playerMoving = false;
 
         if (Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
