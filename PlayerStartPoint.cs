@@ -12,13 +12,13 @@ public class PlayerStartPoint : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		//начальная точка появления игрока при смене карты
         thePlayer = FindObjectOfType<PlayerController>();
         if (thePlayer.startPoint ==pointName)
         {
             thePlayer.transform.position = transform.position;
             thePlayer.lastMove = startDirection;
-
+		//слежение камеры за игроком
             theCamera = FindObjectOfType<CameraController>();
             theCamera.transform.position = new Vector3(transform.position.x, transform.position.y, theCamera.transform.position.z);
         }
