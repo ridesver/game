@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	//диалоговое окно появляется при отпускании клавиши Space
 		if (dialogActive && Input.GetKeyDown(KeyCode.Space))
         {
             dBox.SetActive(false);
