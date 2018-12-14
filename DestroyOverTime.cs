@@ -13,6 +13,7 @@ public class DestroyOverTime : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	//удаление дупликатов игровых объектов при их появлении
         timeToDestroy -= Time.deltaTime;
         if(timeToDestroy<=0)
         { Destroy(gameObject); }
