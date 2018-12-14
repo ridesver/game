@@ -16,7 +16,7 @@ public class FloatingNumbers : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+//количество нанесенного урона
         displayNumber.text = "" + damageNumber;
         transform.position = new Vector3(transform.position.x, transform.position.y + (moveSpeed * Time.deltaTime), transform.position.z);
 		
