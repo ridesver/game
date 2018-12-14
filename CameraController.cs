@@ -17,17 +17,19 @@ public class CameraController : MonoBehaviour {
     private float halfWidth;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
+	//при переходе на новый уровень дупликат камеры автоматически удаляется
         DontDestroyOnLoad(transform.gameObject);
         if (!cameraExists)
-        {
+	{
             cameraExists = true;
             DontDestroyOnLoad(transform.gameObject);
-        }
-        else
+        } else
         {
             Destroy(gameObject);
         }
+	//создание рамок для движения камеры в соответствии с ее размерами
         minBounds = boundsBox.bounds.min;
         maxBounds = boundsBox.bounds.max;
         theCamera = GetComponent<Camera>();
@@ -36,7 +38,9 @@ public class CameraController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update() 
+    {
+	//камера следует за игроком и не выходит за рамки карты
         targetPos = new Vector3(followTarget.transform.position.x, followTarget.transform.position.y, transform.position.z);
         transform.position = Vector3.Lerp(transform.position, targetPos, moveSpeed * Time.deltaTime);
 
@@ -47,6 +51,7 @@ public class CameraController : MonoBehaviour {
     }
     public void SetBounds(BoxCollider2D newBounds)
     {
+	//ограничение карты
         boundsBox = newBounds;
 
         minBounds = boundsBox.bounds.min;
