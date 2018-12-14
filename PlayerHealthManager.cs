@@ -13,6 +13,7 @@ public class PlayerHealthManager : MonoBehaviour {
     private SpriteRenderer playerSprite;
 
 	// Use this for initialization
+	//создание максимального и текущего здоровья
 	void Start () {
         playerCurrentHealth = playerMaxHealth;
         playerSprite = GetComponent<SpriteRenderer>();
@@ -25,6 +26,7 @@ public class PlayerHealthManager : MonoBehaviour {
             gameObject.SetActive(false);
 
         }
+		//игрок оповещает получение урона миганием спрайта(смена цветного спрайта на прозрачный)
         if (flashActive)
         {
             if(flashCounter>flashLength*.66f)
