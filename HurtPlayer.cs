@@ -17,6 +17,7 @@ public class HurtPlayer : MonoBehaviour {
 	}
     void OnCollisionEnter2D(Collision2D other)
     {
+	    //наносится урон игроку с заданным количеством здоровья
         if(other.gameObject.name=="Player")
         {
             other.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(damageToGive);
