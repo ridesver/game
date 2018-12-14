@@ -9,7 +9,7 @@ public class BoundsScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        bounds = GetComponent<BoxCollider2D>();
+        bounds = GetComponent<BoxCollider2D>();             //создание ограничения на обзор камеры, чтобы оно не выходило за рамки карты
         theCamera = FindObjectOfType<CameraController>();
         theCamera.SetBounds(bounds);
 	}
