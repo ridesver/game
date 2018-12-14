@@ -11,7 +11,7 @@ public class MusicController : MonoBehaviour
 
     // Use this for initialization
     void Start()
-    {
+    {//удаление дупликата музыки при переходе на следующую карту
         if (!mcExists)
         {
             mcExists = true;
@@ -26,7 +26,7 @@ public class MusicController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {//если маркер музыки отмечен, то выбирается текущий звук
         if (musicCanPlay)
         {
             if (musicTracks[currentTrack].isPlaying)
@@ -40,6 +40,7 @@ public class MusicController : MonoBehaviour
         }
      
     }
+    //смена звука при переходе
     public void SwitchTrack(int newTrack)
     {
         musicTracks[currentTrack].Stop();
