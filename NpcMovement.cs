@@ -18,6 +18,7 @@ public class NpcMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//создание системы движения для NPC через определенные промежутки в определенное время
         myRigidbody = GetComponent<Rigidbody2D>();
         waitCounter = waitTime;
         walkCounter = walkTime;
@@ -26,6 +27,7 @@ public class NpcMovement : MonoBehaviour {
 
         if (walkZone != null)
         {
+		//границы движения NPC
             minWalkPoint = walkZone.bounds.min;
             maxWalkPoint = walkZone.bounds.max;
             hasWalkZone = true;
@@ -34,6 +36,7 @@ public class NpcMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//движение NPC по горизонтали и вертикали с определенной скоростью
         if (isWalking)
         {
             walkCounter -= Time.deltaTime;
