@@ -17,7 +17,7 @@ public class LoadNewArea : MonoBehaviour {
 	void Update () {
 		
 	}
-
+//создание соответствующих точек входа и выхода из карты
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.name == "Player")
