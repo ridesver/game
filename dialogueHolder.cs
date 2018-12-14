@@ -17,6 +17,7 @@ public class dialogueHolder : MonoBehaviour {
 	void Update () {
 		
 	}
+	//создание зоны, в которой возможен диалог с NPC
     private void OnTriggerStay2D(Collider2D other)
     {
         if(other.gameObject.name=="Player")
