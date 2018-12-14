@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		//создание графического интерфейса полоски здоровья
         if (!UIExists)
         {
             UIExists = true;
@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		//полоска здоровья видоизменяется в соответствии с показателями здоровья
         healthBar.maxValue = playerHealth.playerMaxHealth;
         healthBar.value = playerHealth.playerCurrentHealth;
         HPText.text = "HP: " + playerHealth.playerCurrentHealth + "/" + playerHealth.playerMaxHealth;
